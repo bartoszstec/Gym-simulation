@@ -1,7 +1,7 @@
 # Ignorowanie katalogów __pycache__ i venv
 __pycache__/
 venv/
+.idea/
 
 # Plik konfiguracyjny środowiska
 .env
-.idea
