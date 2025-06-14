@@ -4,3 +4,4 @@ venv/
 
 # Plik konfiguracyjny środowiska
 .env
+.idea

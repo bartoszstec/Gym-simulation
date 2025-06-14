@@ -1,12 +1,12 @@
 CONFIG = {
-    "num_exercises": 10,
-    "day_minutes": 960,
-    "arrival_rate": {
-        "morning": 20,   # np. co 2 minuty użytkownik
+    "num_exercises": 10,    # liczba stanowisk ćwiczeniowych
+    "day_minutes": 960,     # czas trwania symulacji
+    "arrival_rate": {       # częstotliwość przyjeżdżania w zależności od pory dnia
+        "morning": 20,
         "afternoon": 5,
-        "evening": 3,
+        "evening": 2,
     },
-    "training_duration": (30, 90),  # min i max minut
-    "max_wait_time": 15,  # po ilu minutach rezygnują
-    "strategy": "FIFO"  # lub "priority", "reject_long_wait"
+    "training_duration": (30, 90),  # minimalna i maksymalna długość treningu
+    "max_wait_time": 15,            # czas, po którym użytkownicy rezygnują z ćwiczeń w minutach
+    "strategy": "FIFO"              # strategia kolejkowania "FIFO" lub "priority"
 }

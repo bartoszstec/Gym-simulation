@@ -7,7 +7,7 @@ class SimulationRunner:
         from app.environment import GymEnvironment
         self.env_wrapper = GymEnvironment(config)
         self.config = config
-        #self.exercise = simpy.Resource(self.env_wrapper.env, capacity=config["num_exercises"])
+        #self.exercise = simpy.Resource(self.env_wrapper.env, capacity=config["num_exercises"]) // bez strategii
 
         if config["strategy"] == "FIFO":
             self.exercise = simpy.Resource(self.env_wrapper.env, capacity=config["num_exercises"])
@@ -16,7 +16,7 @@ class SimulationRunner:
         else:
             self.exercise = simpy.Resource(self.env_wrapper.env, capacity=config["num_exercises"])
 
-        self.env_wrapper.stats = {"trained": 0, "left": 0, "max_users": 0, "current_users": 0}
+        self.env_wrapper.stats = {"all": 0, "trained": 0, "left": 0, "max_users": 0, "current_users": 0}
 
     def user_arrivals(self):
         i = 1
@@ -38,5 +38,6 @@ class SimulationRunner:
         self.env_wrapper.env.process(self.user_arrivals())
         self.env_wrapper.run(until=self.config["day_minutes"])
         print("\n⏱ KONIEC DNIA – siłownia zamknięta!")
-        print(f"Wszyscy użytkownicy siłowni: {self.env_wrapper.stats['trained'] + self.env_wrapper.stats['left']}")
+
+        print(f"Wszyscy użytkownicy siłowni: {self.env_wrapper.stats['all']}")
         print(f"Użytkownicy, którzy ukończyli trening: {self.env_wrapper.stats['trained']}\nUżytkownicy, którzy zrezygnowali z powodu oczekiwania na ćwiczenie: {self.env_wrapper.stats['left']}\nLiczba użytkowników siłowni podczas największego ruchu: {self.env_wrapper.stats['max_users']}")

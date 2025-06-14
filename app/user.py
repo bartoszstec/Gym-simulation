@@ -38,6 +38,7 @@ class GymUser:
                 print(f"{self.name} left (waited too long) at {self.format_time(self.env.now)}")
                 self.stats["left"] += 1
 
+        self.stats["all"] += 1
         self.stats["current_users"] -= 1
 
     @staticmethod
