@@ -28,16 +28,18 @@ python experiments.py
 ```
 ## Configuration
 You can change configuration of simmulation to your liking by changing parameters in file named: `app\config.py`.
-Basic config present as below:
+## 🔧 Basic configuration present as below:
+```python
 CONFIG = {
-    "num_exercises": 11,    # liczba stanowisk ćwiczeniowych
-    "day_minutes": 960,     # czas trwania symulacji
-    "arrival_rate": {       # częstotliwość przyjeżdżania w zależności od pory dnia
+    "num_exercises": 11,
+    "day_minutes": 960,
+    "arrival_rate": {
         "morning": 20,
         "afternoon": 5,
         "evening": 2,
     },
-    "training_duration": (30, 90),  # minimalna i maksymalna długość treningu
-    "max_wait_time": 15,            # czas, po którym użytkownicy rezygnują z ćwiczeń w minutach
-    "strategy": "priority"              # strategia kolejkowania "FIFO" lub "priority"
+    "training_duration": (30, 90),
+    "max_wait_time": 15,
+    "strategy": "priority"
 }
+```
