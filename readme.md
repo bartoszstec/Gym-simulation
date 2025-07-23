@@ -6,6 +6,9 @@ The simulation aims to represent the gym's operation in a realistic way, taking 
 
 The simulation time covers the entire day of the gym's operation - from opening to closing (by default 16 hours, i.e. 960 minutes).
 
+# Output Graph (Basic Configuration)
+![Graph from running basic configuration simmulation](assets/wykres.jpg)
+
 ## Run simmulation
 To run simmulation i suggest opening Visual Studio Code, then PowerShell and creating new virtual environment in main folder of application:
 ```bash
