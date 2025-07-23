@@ -7,7 +7,7 @@ The simulation aims to represent the gym's operation in a realistic way, taking 
 The simulation time covers the entire day of the gym's operation - from opening to closing (by default 16 hours, i.e. 960 minutes).
 
 ## Run simmulation
-TO run simmulation i suggest creating new virtual environment in main folder of application:
+To run simmulation i suggest creating new virtual environment in main folder of application:
 ```bash
 python -m venv venv
 ```
